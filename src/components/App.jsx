@@ -24,11 +24,14 @@ onLeaveFeedback = (feedbackType) => {
   }));
 };
 
-countPositiveFeedbackPercentage = () => {
-  const { good, neutral, bad } = this.state;
-  const totalFeedback = this.totalFeedback();
-  return totalFeedback === 0 ? 0 : (good / totalFeedback) * 100;
-};
+  countPositiveFeedbackPercentage = () => {
+    const { good, neutral, bad } = this.state;
+    const totalFeedback = good + neutral + bad;
+    if (totalFeedback === 0) {
+      return 0;
+    }
+    return (good / totalFeedback) * 100;
+  }
   render() {
     return (
     <>
