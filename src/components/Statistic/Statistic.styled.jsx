@@ -5,6 +5,6 @@ list-style:none;
 `;
 
 export const StatsNum = styled.span`
-color: navy;
+color: #788785;
 font-weight: bold;
 `
